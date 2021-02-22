@@ -9,5 +9,21 @@
         android:id="@+id/imageSearchFragment"
         android:name="com.gunt.searchimage.ui.imagesearch.ImageSearchFragment"
         android:label="fragment_image_search"
-        tools:layout="@layout/fragment_image_search" />
+        tools:layout="@layout/fragment_image_search">
+        <action
+            android:id="@+id/detailImage"
+            app:destination="@id/imageDocsFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageDocsFragment"
+        android:name="com.gunt.searchimage.ui.imagedocs.ImageDocsFragment"
+        android:label="fragment_image_docs"
+        tools:layout="@layout/fragment_image_docs">
+        <argument
+            android:name="imageDoc"
+            app:argType="com.gunt.searchimage.data.domain.ImageDocument" />
+    </fragment>
 </navigation>

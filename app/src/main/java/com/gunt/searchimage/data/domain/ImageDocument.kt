@@ -1,5 +1,7 @@
 package com.gunt.searchimage.data.domain
 
+import java.io.Serializable
+
 data class ImageDocument(
     val collection: String = "",
     val thumbnail_url: String = "",
@@ -9,8 +11,21 @@ data class ImageDocument(
     val display_sitename: String = "",
     val doc_url: String = "",
     val datetime: String = ""
-){
-    fun getImageRes(): String {
+) : Serializable {
+
+    fun getThumbnailImageRes(): String {
+        return thumbnail_url
+    }
+
+    fun getDetailImageRes(): String {
         return image_url
+    }
+
+    fun getReference(): String {
+        return display_sitename
+    }
+
+    fun getDateTime(): String {
+        return datetime
     }
 }

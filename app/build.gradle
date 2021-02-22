@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 /** Hide App Key **/
@@ -43,11 +44,11 @@ android {
             buildConfigField "String", "KAKAO_KEY", "${kakaoApiKey}"
         }
     }
-    productFlavors{
-        dev{
-            resConfigs('en','xhdpi')
+    productFlavors {
+        dev {
+            resConfigs('en', 'xhdpi')
         }
-        product{
+        product {
 
         }
     }
@@ -93,9 +94,10 @@ dependencies {
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01'
     kaptAndroidTest "androidx.hilt:hilt-compiler:1.0.0-alpha01"
 
-
     //Retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+
     //Gson
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
@@ -130,6 +132,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-runtime-ktx:2.3.3'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.3'
+
+    //paging
+    implementation "androidx.paging:paging-runtime-ktx:2.1.2"
+    testImplementation "androidx.paging:paging-common-ktx:2.1.2"
 
     //Test
     // AndroidJUnitRunner and JUnit Rules
