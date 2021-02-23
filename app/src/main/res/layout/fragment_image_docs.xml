@@ -37,7 +37,7 @@
                 android:id="@+id/txtview_sitename"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{imageDocsViewModel.document.getReference}"
+                android:text="@{imageDocsViewModel.document.geSiteName}"
                 tools:text="블로그"
                 android:gravity="center"
                 />

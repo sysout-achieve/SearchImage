@@ -21,7 +21,7 @@ data class ImageDocument(
         return image_url
     }
 
-    fun getReference(): String {
+    fun geSiteName(): String {
         return display_sitename
     }
 

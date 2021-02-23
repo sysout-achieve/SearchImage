@@ -60,13 +60,13 @@ class ImageSearchFragment : Fragment() {
     // 자동 검색 기능
     private fun setupSearchEditTextChangedListener() {
         val subscription: Disposable =
-            binding.editSearch.textChanges().throttleWithTimeout(1000, TimeUnit.MILLISECONDS)
+            binding.editSearch.textChanges().debounce(1000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .subscribeBy(
                     onNext = {
                         if (viewModel.query != it.toString() && it != "") {
                             viewModel.query = it.toString()
-                            viewModel.fetchImage()
+                            (binding.recyclerImage.adapter as ImageSearchAdapter).currentList?.dataSource?.invalidate()
                         }
                     }
                 )
