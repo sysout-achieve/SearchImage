@@ -9,7 +9,7 @@ import io.reactivex.rxjava3.core.Single
 class FakeImageRepository constructor(private var imageList: MutableList<ImageDocument>) :
     ImageRepository {
 
-    val responseMeta = ResponseMeta(6, 2, false)
+    private val responseMeta = ResponseMeta(6, 2, false)
 
     override fun fetchImage(title: String, page: Int): Single<ResponseKakao<ImageDocument>> {
         return Single.just(ResponseKakao(responseMeta, imageList))

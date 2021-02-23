@@ -43,8 +43,7 @@ class ImageRepositoryTest {
                 image_url = "https://search4.kakaocdn.net/argon/130x130_85_c/DJiIXGi0rWH"
             )
         )
-        imageRepository =
-            FakeImageRepository(imageList)
+        imageRepository = FakeImageRepository(imageList)
     }
 
     @Test
