@@ -20,7 +20,7 @@ private const val BASE_URL = "https://dapi.kakao.com"
 /**
  * 외부 공개를 위한 api key
  * */
-//const val KAKAO_API_KEY = BuildConfig.KAKAO_KEY
+// const val KAKAO_API_KEY = BuildConfig.KAKAO_KEY
 const val KAKAO_API_KEY = "7dc7fc75f19bac6eb56949578d82a08a"
 
 @Module
