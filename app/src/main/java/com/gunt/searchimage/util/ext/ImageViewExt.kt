@@ -13,7 +13,6 @@ object ImageViewExt {
             .load(imgUrl)
             .error(R.drawable.ic_launcher_foreground) // Error Image 있을 경우 변경
             .into(this)
-
     }
 
     @JvmStatic

@@ -15,9 +15,9 @@ interface ImageDocumentService {
     @GET("/v2/search/image")
     @Headers("Authorization: KakaoAK $KAKAO_API_KEY")
     fun fetchImage(
-            @Query("query") title: String,
-            @Query("sort") sort: String = REQUEST_IMAGE_LIST_TYPE_DEFAULT,
-            @Query("page") page: Int,
-            @Query("size") size: Int = REQUEST_IMAGE_LIST_SIZE_DEFAULT
+        @Query("query") title: String,
+        @Query("sort") sort: String = REQUEST_IMAGE_LIST_TYPE_DEFAULT,
+        @Query("page") page: Int,
+        @Query("size") size: Int = REQUEST_IMAGE_LIST_SIZE_DEFAULT
     ): Single<ResponseKakao<ImageDocument>>
 }

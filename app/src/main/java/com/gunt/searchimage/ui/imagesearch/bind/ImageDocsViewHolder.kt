@@ -8,8 +8,7 @@ import com.gunt.searchimage.databinding.ImagedocsItemBinding
 
 class ImageDocsViewHolder
 private constructor
-    (private val binding: ImagedocsItemBinding, private val onClick: (ImageDocument) -> Unit
-) :
+(private val binding: ImagedocsItemBinding, private val onClick: (ImageDocument) -> Unit) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: ImageDocument?) {

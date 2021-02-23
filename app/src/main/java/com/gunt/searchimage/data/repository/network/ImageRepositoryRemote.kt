@@ -12,7 +12,7 @@ import io.reactivex.rxjava3.core.Single
 @InstallIn(ActivityRetainedComponent::class)
 class ImageRepositoryRemote
 constructor(
-        private var imageDocumentService: ImageDocumentService
+    private var imageDocumentService: ImageDocumentService
 ) : ImageRepository {
 
     override fun fetchImage(title: String, page: Int): Single<ResponseKakao<ImageDocument>> {

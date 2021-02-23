@@ -18,7 +18,7 @@ class ImageDocsDataSourceFactory(private val viewModel: ImageSearchViewModel) :
 class ImageDocsDataSource(private var viewModel: ImageSearchViewModel) :
     PageKeyedDataSource<Int, ImageDocument>() {
 
-    var page = 1
+    private var page = 1
 
     override fun loadInitial(
         params: LoadInitialParams<Int>,
@@ -39,6 +39,4 @@ class ImageDocsDataSource(private var viewModel: ImageSearchViewModel) :
 
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, ImageDocument>) {
     }
-
-
 }
