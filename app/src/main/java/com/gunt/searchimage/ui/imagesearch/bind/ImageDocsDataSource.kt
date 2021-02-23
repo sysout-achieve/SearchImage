@@ -12,14 +12,14 @@ class ImageDocsDataSource(private var viewModel: ImageSearchViewModel) :
         callback: LoadInitialCallback<Int, ImageDocument>
     ) {
         viewModel.page = 1
-        viewModel.getImageFromRepository(viewModel.query, viewModel.page) { result ->
+        viewModel.fetchImage(viewModel.query, viewModel.page) { result ->
             if (!result.meta.is_end) callback.onResult(result.documents, null, ++viewModel.page)
             viewModel.isEmpty.postValue(result.meta.total_count == 0)
         }
     }
 
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, ImageDocument>) {
-        viewModel.getImageFromRepository(viewModel.query, params.key) { result ->
+        viewModel.fetchImage(viewModel.query, params.key) { result ->
             if (!result.meta.is_end) callback.onResult(result.documents, ++viewModel.page)
             viewModel.isEmpty.postValue(result.meta.total_count == 0)
         }

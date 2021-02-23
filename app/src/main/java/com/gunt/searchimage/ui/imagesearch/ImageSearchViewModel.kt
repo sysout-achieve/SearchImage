@@ -40,8 +40,8 @@ constructor(
         config
     ).build()
 
-    fun getImageFromRepository(searchText: String, page: Int, unit: (ResponseKakao<ImageDocument>) -> Unit) {
-        val disposable = repository.fetchImage(searchText, page)
+    fun fetchImage(searchText: String, page: Int, unit: (ResponseKakao<ImageDocument>) -> Unit) {
+        val disposable = getImageFromRepository(searchText, page)
             .subscribeOn(Schedulers.io())
             .subscribe(
                 { unit(it) },
@@ -51,6 +51,8 @@ constructor(
 
         compositeDisposable.add(disposable)
     }
+
+    fun getImageFromRepository(searchText: String, page: Int) = repository.fetchImage(searchText, page)
 
     override fun onCleared() {
         compositeDisposable.clear()

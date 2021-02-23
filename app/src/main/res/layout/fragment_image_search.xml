@@ -55,6 +55,8 @@
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_search"
-            tools:itemCount="3" />
+            tools:itemCount="3"
+            tools:listitem="@layout/imagedocs_item"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

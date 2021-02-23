@@ -29,8 +29,11 @@ object RetrofitModule {
         return OkHttpClient.Builder()
             .connectionPool(ConnectionPool(5, 20, TimeUnit.SECONDS))
             .addInterceptor(
-                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-            ).build()
+                HttpLoggingInterceptor().setLevel(
+                    if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+                )
+            )
+            .build()
     }
 
     @Singleton
