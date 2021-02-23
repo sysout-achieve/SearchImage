@@ -40,7 +40,9 @@ class ImageSearchViewConnectionTest {
                 },
                 {}
             )
+
         // then
+        Thread.sleep(1000)
         response.test().awaitDone(5, TimeUnit.SECONDS).onComplete()
 
         assertThat(list.size).isEqualTo(expected)
