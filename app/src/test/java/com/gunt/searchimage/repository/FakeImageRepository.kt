@@ -1,4 +1,4 @@
-package com.gunt.searchimage
+package com.gunt.searchimage.repository
 
 import com.gunt.searchimage.data.domain.ImageDocument
 import com.gunt.searchimage.data.repository.ImageRepository
