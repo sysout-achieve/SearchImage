@@ -25,6 +25,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
 const val GRID_SPAN_COUNT = 3
+const val TIME_DEBOUNCE_MILLISECONDS = 1000L
 
 @AndroidEntryPoint
 class ImageSearchFragment : Fragment() {
@@ -60,7 +61,7 @@ class ImageSearchFragment : Fragment() {
     // 자동 검색 기능
     private fun setupSearchEditTextChangedListener() {
         val subscription: Disposable =
-            binding.editSearch.textChanges().debounce(1000, TimeUnit.MILLISECONDS)
+            binding.editSearch.textChanges().debounce(TIME_DEBOUNCE_MILLISECONDS, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .subscribeBy(
                     onNext = {
