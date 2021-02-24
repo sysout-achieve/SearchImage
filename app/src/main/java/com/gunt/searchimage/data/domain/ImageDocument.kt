@@ -21,7 +21,7 @@ data class ImageDocument(
         return image_url
     }
 
-    fun geSiteName(): String {
+    fun getSiteName(): String {
         return display_sitename
     }
 
