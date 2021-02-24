@@ -7,10 +7,7 @@ import com.gunt.searchimage.ui.imagesearch.ImageSearchViewModel
 class ImageDocsDataSource(private var viewModel: ImageSearchViewModel) :
     PageKeyedDataSource<Int, ImageDocument>() {
 
-    override fun loadInitial(
-        params: LoadInitialParams<Int>,
-        callback: LoadInitialCallback<Int, ImageDocument>
-    ) {
+    override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, ImageDocument>) {
         viewModel.page = 1
         viewModel.fetchImage(viewModel.query, viewModel.page) { result ->
             if (!result.meta.is_end) callback.onResult(result.documents, null, ++viewModel.page)

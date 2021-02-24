@@ -122,9 +122,6 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
-    //Swipe Refresh Layout
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-
     //ViewModel
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
