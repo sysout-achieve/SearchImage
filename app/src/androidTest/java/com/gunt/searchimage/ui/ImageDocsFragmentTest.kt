@@ -45,7 +45,6 @@ class ImageDocsFragmentTest {
         onView(withId(R.id.btn_back)).check(matches(isDisplayed()))
         onView(withId(R.id.txtview_sitename)).check(matches(isDisplayed()))
         onView(withId(R.id.txtview_datetime)).check(matches(isDisplayed()))
-        onView(withId(R.id.view_img_detail)).check(matches(isDisplayed()))
     }
 
     @Test

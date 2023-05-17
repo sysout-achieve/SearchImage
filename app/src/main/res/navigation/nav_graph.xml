@@ -13,8 +13,8 @@
         <action
             android:id="@+id/detailImage"
             app:destination="@id/imageDocsFragment"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_open_exit"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_enter_anim"
             app:popUpToInclusive="false" />
     </fragment>
     <fragment

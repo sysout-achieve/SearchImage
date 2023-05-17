@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.imagedocs.ImageDocsFragment">
+    >
     <data>
         <variable
             name="imageDocsViewModel"
@@ -33,6 +33,8 @@
                 android:id="@+id/view_img_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
                 app:loadImage="@{imageDocsViewModel.document.getDetailImageRes}"
                 />
 

@@ -2,6 +2,7 @@ package com.gunt.searchimage.data.domain
 
 import java.io.Serializable
 
+
 data class ImageDocument(
     val collection: String = "",
     val thumbnail_url: String = "",
